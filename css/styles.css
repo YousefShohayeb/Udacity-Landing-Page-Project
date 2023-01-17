@@ -1,0 +1,110 @@
+body{
+    margin: 0%;
+    background: linear-gradient(blue, navy);
+}/*makes the background a gradient and removes margin to keep navbar full at the top of the page*/
+
+nav{
+    background-color: aqua;
+    position: sticky;
+    top:0px;
+    z-index: 2;
+    margin: 0%;
+} /* nav bar, is sticky in order to keep it at the top of the page.
+z-index used because navbar was hiding under text but over background otherwise*/
+ul{
+    height: 40px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-inline-start: 0px;
+    margin: 0%;
+}/*flexbox used here to keep navbar items in the middle of the navbar*/
+
+section {
+    color: white;
+    margin:0%;
+    overflow: hidden;
+}/*section uses overflow so that webpage doesn't go wide when initial slide in animations are played*/
+
+h1 {
+    font-size: 4em;
+}
+
+h2{
+    font-size: 2.5em;
+}
+p{
+    font-size: 1.75em;
+}
+/*font sizes made em to make them more readable on bigger screens*/
+
+
+.animated{
+    animation: anime 3s ease-out 0s 1 normal both;
+} /* animation codes, name, number of seconds animation plays, type of animation play (ease in/out, both or no easing)
+0s is delay time, 1 is iteration number, normal is play direction (normal/ reverse etc.),
+both is what gets taken at the beginning and end of the animation*/
+
+@keyframes anime {
+    from {
+        opacity: 0%;
+        margin-left:100%;
+        width: 100%;
+    }
+    to{
+        opacity: 100%;
+        margin-left: 0%;
+        width:100%;
+    }
+}/*animation specifics, from is where animation begins, to is where animation ends*/
+div{
+    z-index: 1;
+    opacity: 0%;
+
+}/*div's opacities are set at 0 because I didn't want to completely hide the elements, I wanted
+the animation reveal to happen one at a time, so I made opacity 0 in order to keep the scrolling function
+involved with the animation reveal of each section*/
+
+a:link{
+    color:black;
+    text-decoration: none;
+}/*link color when it's not clicked, no underline signifying that it's an anchor*/
+
+a:hover{
+    color:brown;
+    text-decoration: underline;
+}/*more of a test condition but I liked the difference so I kept it*/
+
+a:visited{
+    color: black;
+} /*i wanted to make sure that the visited link was changed to be the same as link so that it's signified differently*/
+
+a:active{
+    color: white;
+    text-decoration: underline overline;
+} /*realised later on this is while it was clicked. */
+
+a.active{
+    color: white;
+    text-decoration: underline overline;
+    
+}/*active section makes sure buttons are highlighted while on the described section in javascript*/
+
+.hide{
+height: 0px;
+opacity: 0%;
+}/*this is to hide the text, height and max-height can't be animated through CSS*/
+
+.show{
+height: auto;
+}/*this is ti show the text, height and max-height can't be animated through css*/
+
+.hider{
+ opacity: 0%;
+} /*prevents the object from being seen*/
+
+a.hider{
+    display: none;
+   } /*specifically turns off the display function of anchors to prevent them from being clicked while hidden*/
